@@ -17,6 +17,7 @@
         <org.aspectj-version>1.6.10</org.aspectj-version>
         <org.slf4j-version>1.7.30</org.slf4j-version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -28,6 +29,25 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.20</version>
+        </dependency>
+
+        <!-- add -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.7.0</version>
         </dependency>
 
         <!-- Logging -->
