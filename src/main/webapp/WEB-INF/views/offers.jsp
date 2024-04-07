@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Offers</title>
 </head>
 <body>
     <c:forEach var="offer" items="${id_offers}" >

@@ -14,7 +14,13 @@ public class OfferService {
     @Autowired
     private OfferDao offerDao;
 
+    //table의 모든 레코드 가져오기
     public List<Offer> getAllOffers() {
         return offerDao.getOffers();
+    }
+
+    //table에 레코드 추가하기
+    public void insert(Offer offer) {
+        offerDao.insert(offer);
     }
 }

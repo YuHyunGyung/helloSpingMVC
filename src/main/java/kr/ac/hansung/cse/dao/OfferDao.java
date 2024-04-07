@@ -17,7 +17,7 @@ public class OfferDao {
 
     private JdbcTemplate jdbcTemplate; //sql 아닌 api 를 사용해서 데이터베이스에 접근할 수 있음
 
-    //@Autowired
+    @Autowired
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
@@ -51,7 +51,7 @@ public class OfferDao {
     }
 
     //query and return multiple objects
-    // cRud method
+    //cRud method
     public List<Offer> getOffers() {
 
         String sqlStatement= "select * from offers";
@@ -73,7 +73,7 @@ public class OfferDao {
     }
 
 
-    // Crud method
+    //Crud method
     public boolean insert(Offer offer) {
 
         String name= offer.getName();
@@ -85,7 +85,7 @@ public class OfferDao {
         return (jdbcTemplate.update(sqlStatement, new Object[] {name, email, text}) == 1);
     }
 
-    // crUd method
+    //crUd method
     public boolean update(Offer offer) {
 
         int id = offer.getId();
