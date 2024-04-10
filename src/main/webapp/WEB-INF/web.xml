@@ -5,13 +5,13 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!-- The definition of the Root Spring Container shared by all Servlets
-        and Filters -->
+    <!-- add/ The definition of the Root Spring Container shared by all Servlets and Filters -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/spring/appServlet/service-context.xml
             /WEB-INF/spring/appServlet/dao-context.xml
+            /WEB-INF/spring/appServlet/security-context.xml
         </param-value>
     </context-param>
 
@@ -36,7 +36,8 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- filter 등록, 한글안깨지게 강제적으로 UTF-8f로 강제 인코딩해줌 -->
+
+    <!-- add / filter 등록, 한글안깨지게 강제적으로 UTF-8f로 강제 인코딩해줌 -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>
@@ -57,6 +58,17 @@
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- add / DelegatingFiilter -->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern> <!-- 모든 request를 가로채겠다! -->
     </filter-mapping>
 
 </web-app>

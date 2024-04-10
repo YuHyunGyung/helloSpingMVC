@@ -16,6 +16,8 @@
         <org.springframework-version>5.3.30</org.springframework-version>
         <org.aspectj-version>1.6.10</org.aspectj-version>
         <org.slf4j-version>1.7.30</org.slf4j-version>
+        <!-- add/ version -->
+        <org.spring.security-version>5.7.7</org.spring.security-version>
     </properties>
 
     <dependencies>
@@ -54,6 +56,25 @@
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>6.2.0.Final</version>
+        </dependency>
+
+        <!-- add / Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${org.spring.security-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${org.spring.security-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${org.spring.security-version}</version>
         </dependency>
 
 
