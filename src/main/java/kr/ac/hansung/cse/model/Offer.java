@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -12,8 +13,12 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor //인자없는 contraint를 만
+@NoArgsConstructor //인자없는 contraint
+@Entity
+@Table(name="offers")
 public class Offer {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
     @Size(min=2, max=100, message="Name must be between 2 and 100 chars") //제약조건
